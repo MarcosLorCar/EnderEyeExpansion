@@ -13,19 +13,28 @@ class WorldListener : Listener {
     fun onWorldLoad(event: WorldLoadEvent) {
         val world = event.world
         if (world.environment != World.Environment.NORMAL) return
-        val datapackFolder = File(world.worldFolder, "datapacks")
-        if (!datapackFolder.exists()) datapackFolder.mkdirs()
+        injectDatapack(world)
+    }
 
-        val datapackName = "EnderEyeExpansion_Datapack"
-        val targetZip = File(datapackFolder, "$datapackName.zip")
-        if (!targetZip.exists()) {
-            // Copy from your plugin resources
-            EnderEyeExpansionPlugin::class.java.getResourceAsStream("/$datapackName.zip").use { input ->
-                targetZip.outputStream().use { output ->
-                    input?.copyTo(output)
+    companion object {
+        fun injectDatapack(world: World) {
+            val datapackFolder = File(world.worldFolder, "datapacks")
+            if (!datapackFolder.exists()) datapackFolder.mkdirs()
+
+            val datapackName = "EnderEyeExpansion_Datapack"
+            val targetZip = File(datapackFolder, "$datapackName.zip")
+            if (!targetZip.exists()) {
+                // Copy from your plugin resources
+                EnderEyeExpansionPlugin::class.java.getResourceAsStream("/$datapackName.zip").use { input ->
+                    targetZip.outputStream().use { output ->
+                        input?.copyTo(output)
+                    }
                 }
+                val datapackManager = Bukkit.getDatapackManager()
+                datapackManager.refreshPacks()
+                datapackManager.getPack("file/EnderEyeExpansion_Datapack.zip")?.isEnabled = true
+                Bukkit.getLogger().info("Injected datapack '$datapackName' into ${world.name}")
             }
-            Bukkit.getLogger().info("Injected datapack '$datapackName' into ${world.name}")
         }
     }
 }

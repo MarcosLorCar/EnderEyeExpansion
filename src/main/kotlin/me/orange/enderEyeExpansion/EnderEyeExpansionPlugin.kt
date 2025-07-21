@@ -1,11 +1,6 @@
 package me.orange.enderEyeExpansion
 
-import me.orange.enderEyeExpansion.listeners.BeaconListener
-import me.orange.enderEyeExpansion.listeners.DarkEyeInvincibilityListener
-import me.orange.enderEyeExpansion.listeners.EndPortalFrameListener
-import me.orange.enderEyeExpansion.listeners.RaidWinningListener
-import me.orange.enderEyeExpansion.listeners.ThrowListener
-import me.orange.enderEyeExpansion.listeners.WorldListener
+import me.orange.enderEyeExpansion.listeners.*
 import org.bukkit.plugin.java.JavaPlugin
 
 class EnderEyeExpansionPlugin : JavaPlugin() {
@@ -18,6 +13,11 @@ class EnderEyeExpansionPlugin : JavaPlugin() {
         pluginManager.registerEvents(RaidWinningListener(this), this)
         pluginManager.registerEvents(ThrowListener(), this)
         pluginManager.registerEvents(WorldListener(), this)
+        if (server.worlds.isNotEmpty()) {
+            server.worlds.filter { it.environment == org.bukkit.World.Environment.NORMAL }.forEach {
+                WorldListener.injectDatapack(it)
+            }
+        }
     }
 
     override fun onDisable() {
