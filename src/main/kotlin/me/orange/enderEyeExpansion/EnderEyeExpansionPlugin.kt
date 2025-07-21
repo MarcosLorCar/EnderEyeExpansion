@@ -1,0 +1,29 @@
+package me.orange.enderEyeExpansion
+
+import me.orange.enderEyeExpansion.listeners.BeaconListener
+import me.orange.enderEyeExpansion.listeners.DarkEyeInvincibilityListener
+import me.orange.enderEyeExpansion.listeners.EndPortalFrameListener
+import me.orange.enderEyeExpansion.listeners.RaidWinningListener
+import me.orange.enderEyeExpansion.listeners.ThrowListener
+import me.orange.enderEyeExpansion.listeners.WorldListener
+import org.bukkit.plugin.java.JavaPlugin
+
+class EnderEyeExpansionPlugin : JavaPlugin() {
+
+    override fun onEnable() {
+        val pluginManager = server.pluginManager
+        pluginManager.registerEvents(BeaconListener(), this)
+        pluginManager.registerEvents(EndPortalFrameListener(this), this)
+        pluginManager.registerEvents(DarkEyeInvincibilityListener(), this)
+        pluginManager.registerEvents(RaidWinningListener(this), this)
+        pluginManager.registerEvents(ThrowListener(), this)
+        pluginManager.registerEvents(WorldListener(), this)
+    }
+
+    override fun onDisable() {
+    }
+
+    companion object {
+        const val NAMESPACE = "ender_eye_expansion"
+    }
+}
