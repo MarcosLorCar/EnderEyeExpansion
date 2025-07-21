@@ -7,17 +7,27 @@ import org.bukkit.Location
 import org.bukkit.Material
 import org.bukkit.NamespacedKey
 import org.bukkit.Particle
+import org.bukkit.advancement.Advancement
 import org.bukkit.block.Block
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.loot.LootContext
+import org.bukkit.loot.LootTable
 import org.bukkit.util.Vector
 import java.util.*
 
 class BeaconListener : Listener {
-    val advancement = Bukkit.getAdvancement(NamespacedKey(EnderEyeExpansionPlugin.Companion.NAMESPACE, "eyes/greed")) ?: throw Exception("Datapack not loaded")
-    val lootTable = Bukkit.getLootTable(NamespacedKey(EnderEyeExpansionPlugin.Companion.NAMESPACE, "custom_eye_greed")) ?: throw Exception("Datapack not loaded")
+    val advancement: Advancement by lazy {
+        Bukkit.getAdvancement(
+            NamespacedKey(EnderEyeExpansionPlugin.Companion.NAMESPACE, "eyes/greed")
+        ) ?: error("Datapack not loaded")
+    }
+    val lootTable: LootTable by lazy {
+        Bukkit.getLootTable(
+            NamespacedKey(EnderEyeExpansionPlugin.Companion.NAMESPACE, "custom_eye_greed")
+        ) ?: error("Datapack not loaded")
+    }
 
     @EventHandler
     fun onBeaconActivate(event: BeaconActivatedEvent) {
@@ -30,6 +40,8 @@ class BeaconListener : Listener {
 
 
         val players = beacon.entitiesInRange.filterIsInstance<Player>()
+
+
 
         if (players.any { it.getAdvancementProgress(advancement).isDone }) return
 

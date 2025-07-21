@@ -41,7 +41,6 @@ class EndPortalFrameListener(
     fun onPlayerInteract(event: PlayerInteractEvent) {
         if (event.action != Action.RIGHT_CLICK_BLOCK) return
         if (event.clickedBlock?.state?.type != Material.END_PORTAL_FRAME) return
-        print("CLICK")
         if (event.item?.type != Material.ENDER_EYE) return
 
         val item = event.item!!

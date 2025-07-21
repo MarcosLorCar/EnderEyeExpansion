@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.raid.RaidFinishEvent
 import org.bukkit.loot.LootContext
+import org.bukkit.loot.LootTable
 import org.bukkit.plugin.Plugin
 import org.bukkit.scheduler.BukkitTask
 import java.util.*
@@ -16,11 +17,13 @@ import java.util.*
 class RaidWinningListener(
     private val plugin: Plugin
 ) : Listener {
-    companion object {
-        val lootTableKey = NamespacedKey(EnderEyeExpansionPlugin.Companion.NAMESPACE, "custom_eye_hero")
+
+    val lootTable: LootTable by lazy {
+        Bukkit.getLootTable(
+            NamespacedKey(EnderEyeExpansionPlugin.Companion.NAMESPACE, "custom_eye_hero")
+        ) ?: error("Datapack not loaded")
     }
 
-    val lootTable = Bukkit.getLootTable(lootTableKey) ?: throw Exception("Datapack not loaded")
 
     @EventHandler
     fun onWinning(event: RaidFinishEvent) {
