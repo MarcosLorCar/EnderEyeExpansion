@@ -1,58 +1,80 @@
-# 🧿 EnderEyeExpansion
+# EnderEyeExpansion
 
-**EnderEyeExpansion** is a Minecraft Paper plugin that adds a set of custom Eyes of Ender, each tied to new crafting recipes, mob drops, quests, and world events. These items can be used to expand progression and exploration with lore-rich objectives and rare drops.
-
-![Crafting Recipes](./recipes.png)
+**EnderEyeExpansion** is a Paper plugin that expands the classic Ender Eye with a variety of custom eyes, each featuring unique lore, crafting recipes, and custom advancements. The plugin also injects a matching datapack for smooth integration with your server.
 
 ---
 
-## 📦 Features
+## Features
 
-- 🧪 **12 unique Eyes of Ender** tied to mobs, bosses, events, and crafting
-- ⚒️ Custom crafting recipes (see image above)
-- 🏹 Dungeon & boss integration for loot-based rewards
-- 🧩 Automatic datapack injection to enhance compatibility and modularity
-
----
-
-## 🧿 List of Eyes & How to Obtain
-
-| Nº | Name                      | Type     | Source Description                                 | Eye Reward              | Chance     |
-|----|---------------------------|----------|---------------------------------------------------|-------------------------|------------|
-| 1  | Jungle Ruins              | Dungeon  | Jungle-themed structure loot                      | Eye of the Jungle       | 70%        |
-| 2  | Ancient Nether Bastion    | Dungeon  | Bastion loot (treasure + 15%)                     | Eye of Gold             | 75% / 15%  |
-| 3  | Wither                    | Boss     | Wither drop                                       | Dark Eye                | 10%        |
-| 4  | Pale Garden               | Crafting | Eye + Resin crafting                              | Resin Eye               | 100%       |
-| 5  | Elder Guardian            | Boss     | Elder guardian drop                               | Elder Eye               | 20%        |
-| 6  | Warden                    | Boss     | Warden drop                                       | Ancient Eye             | 50%        |
-| 7  | Guardian                  | Mob      | Very rare guardian drop                           | Aquatic Eye             | 0.01%      |
-| 8  | Heavy Core                | Crafting | Alternative weapon crafting                       | Challenge Eye           | 100%       |
-| 9  | Sniffer Eye               | Special  | Sniffer dig-up loot                               | Ancient Eye             | 15%        |
-| 10 | Gold                      | Mob/Quest| 20k gold gathered or beacon offering              | Eye of Greed            | 100%       |
-| 11 | Custom 1                  | Crafting | Amethyst + Enchanted Apple + Turtle Helmet        | Wealth Eye              | 100%       |
-| 12 | Hero of the Village       | Quest    | Max raid success                                  | Hero’s Eye              | 100%       |
+- Adds multiple **custom Ender Eyes** with rich lore connected to Minecraft’s world and mobs.
+- Custom **advancements** to track the discovery and collection of these unique eyes.
+- New crafting recipes for special items like the **Resin Eye** and **Wealth Eye**.
+- Seamless integration with Paper servers, requiring no additional setup.
+- Enhances gameplay by adding thematic items tied to exploration and achievements.
 
 ---
 
-## 🧰 Setup
+## Custom Eyes & Lore
 
-1. **Install Paper** 1.20.x or newer.
-2. Place the plugin `.jar` in your `/plugins` folder.
-3. Start the server once to auto-generate folders.
-4. ✅ The plugin will auto-inject the necessary datapack into the Overworld.
-5. Use `/datapack list` to confirm it's loaded (or restart to ensure correct load order).
+| Eye Name           | Lore                                    | Advancement Description              |
+|--------------------|-----------------------------------------|------------------------------------|
+| **Eye of the Jungle**   | Infused with the secrets of overgrown temples | Found in the heart of the jungle    |
+| **Magma Eye**           | Burns with the fury of the nether's core     | Found within the piglins' bastions  |
+| **Dark Eye**            | Shrouded in the shadows of the abyss         | Dropped by the Wither                |
+| **Resin Eye**           | Encased in hardened sap from mythical trees  | Created by combining Ender Eye with Resin |
+| **Elder Eye**           | Holds the wisdom of ancient sea guardians     | Dropped by the Elder Guardian        |
+| **Warden Eye**          | Echoes with the silence of the Deep Dark      | Dropped by the Warden                |
+| **Guardian Eye**        | Shimmers with oceanic energy                    | Rarely dropped by Guardians          |
+| **Trial's Eye**         | Unyielding and forged under immense pressure  | Obtained from the Mace Trial chamber |
+| **Ancient Eye**         | Radiates with forgotten power                   | Unearthed by the Sniffer             |
+| **Eye of Greed**        | Hungers eternally for more                       | Earned by completing a golden tier 4 beacon |
+| **Wealth Eye**          | Sparkles with the riches of empires             | Crafted using various rare materials  |
+| **Hero's Eye**          | Watches over the brave and bold                  | Awarded after defeating a max-level raid |
 
 ---
 
-## 📝 License
+## Advancements
 
-This project is licensed under the MIT License.  
-See [`LICENSE`](./LICENSE) for more information.
+- **Eye gathering**: The eye hunt begins (starting advancement)
+- Each custom eye has a corresponding advancement describing how to obtain it.
 
 ---
 
-## 👤 Author
+## Crafting Recipes
 
-Developed by **Marcos “Orange”**  
-Feel free to contribute, suggest ideas, or open issues!
+Below are the recipes for some of the custom eyes.  
+*Screenshots coming soon!*
 
+### Base Ender Eye Recipe  
+*The foundational recipe extended by the plugin.*
+
+![Base Ender Eye Recipe Screenshot](PLACEHOLDER_FOR_BASE_ENDER_EYE_RECIPE_IMAGE)
+
+---
+
+### Resin Eye Recipe  
+*Crafted by combining the Ender Eye with Resin.*
+
+![Resin Eye Recipe Screenshot](PLACEHOLDER_FOR_RESIN_EYE_RECIPE_IMAGE)
+
+---
+
+### Wealth Eye Recipe  
+*Crafted from various rare materials.*
+
+![Wealth Eye Recipe Screenshot](PLACEHOLDER_FOR_WEALTH_EYE_RECIPE_IMAGE)
+
+---
+
+## Installation
+
+1. Download the latest release from the [Releases](#) page.
+2. Place the `.jar` file into your Paper server’s `plugins` folder.
+3. Start the server to generate config and datapack files.
+4. Customize if needed, then restart or reload the server.
+
+---
+
+## License
+
+Licensed under the [MIT License](LICENSE).
