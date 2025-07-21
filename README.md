@@ -14,6 +14,14 @@
 
 ---
 
+## Resource Pack
+
+⚠️ This plugin **requires a resource pack** to properly display custom item textures and lore.
+
+- The resource pack is included in the root of this repository as:
+[EnderEyeExpansion_Resourcepack.zip](./EnderEyeExpansion_Resourcepack.zip)
+---
+
 ## Custom Eyes & Lore
 
 | Eye Name           | Lore                                    | Advancement Description              |
@@ -46,32 +54,34 @@ Below are the recipes for some of the custom eyes.
 *Screenshots coming soon!*
 
 ### Base Ender Eye Recipe  
-*The foundational recipe extended by the plugin.*
+*The foundational recipe extended by the plugin.* **SHAPELESS**
 
-![Base Ender Eye Recipe Screenshot](PLACEHOLDER_FOR_BASE_ENDER_EYE_RECIPE_IMAGE)
+<img width="742" height="341" alt="endereye" src="https://github.com/user-attachments/assets/4a66745b-b106-4c3e-9cc9-55b56408315c" />
 
 ---
 
 ### Resin Eye Recipe  
 *Crafted by combining the Ender Eye with Resin.*
 
-![Resin Eye Recipe Screenshot](PLACEHOLDER_FOR_RESIN_EYE_RECIPE_IMAGE)
+<img width="742" height="341" alt="resin" src="https://github.com/user-attachments/assets/7fe820ff-e633-46a4-b06e-30acd6bb767d" />
 
 ---
+
 
 ### Wealth Eye Recipe  
 *Crafted from various rare materials.*
 
-![Wealth Eye Recipe Screenshot](PLACEHOLDER_FOR_WEALTH_EYE_RECIPE_IMAGE)
+<img width="742" height="341" alt="wealth" src="https://github.com/user-attachments/assets/546527e2-396e-48f7-96d8-cbf1b93cb20a" />
 
 ---
 
 ## Installation
 
-1. Download the latest release from the [Releases](#) page.
+1. Download the latest release from the [Releases](https://github.com/MarcosLorCar/EnderEyeExpansion/releases/latest) page.
 2. Place the `.jar` file into your Paper server’s `plugins` folder.
-3. Start the server to generate config and datapack files.
-4. Customize if needed, then restart or reload the server.
+3. Upload and enable the included resource pack on your server.
+   - Alternatively download it manually on clients
+5. Start the server to generate and config datapack files.
 
 ---
 
