@@ -1,5 +1,8 @@
 # EnderEyeExpansion
 
+![Version](https://img.shields.io/badge/version-Release_1.1-green.svg)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.21.7-blue.svg)
+
 **EnderEyeExpansion** is a Paper plugin that expands the classic Ender Eye with a variety of custom eyes, each featuring unique lore, crafting recipes, and custom advancements. The plugin also injects a matching datapack for smooth integration with your server.
 
 ---
