@@ -82,9 +82,18 @@ class EndPortalFrameListener(
         iterateEndPortalFrames(center) { location ->
             val frame = location.block
 
+            val portalFrame = frame.blockData as? EndPortalFrame
+
             val blockDisplay = getNearbyDisplay(frame)
 
-            if (blockDisplay.isEmpty()) return@iterateEndPortalFrames
+            if (blockDisplay.isEmpty()) {
+                if (portalFrame?.hasEye() == false) return@iterateEndPortalFrames
+                portalFrame?.setEye(false)
+                frame.blockData = portalFrame!!
+                errorFeedback(frame)
+                return@iterateEndPortalFrames
+            }
+
             val thisEyeType = eyeList.filterValues { it == (blockDisplay[0].block as Jigsaw).orientation }.keys.firstOrNull() ?: return@iterateEndPortalFrames
 
             placedCount++
